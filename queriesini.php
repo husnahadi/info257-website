@@ -7,6 +7,7 @@ exception('Unable to open ' . $file . '.');
 $user_query = $queries['queries']['users'];  
 $proj_query = $queries['queries']['projs'];  
 $org_query = $queries['queries']['orgs']; 
+$loc_query = $queries['queries']['user_locations'];
 
 
 ?>
