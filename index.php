@@ -1,7 +1,7 @@
 <?php 
 	echo "Hello!";
-
-	$db = new mysqli(“localhost”, “husnahadi”, “rGvFk8xy”,“husnahadi”);
+	include 'mysqlini.php';
+	$db = new mysqli($host, $user, $pw, $dbname);
 
 	if($db->connect_errorno){
 		echo "<p>";
