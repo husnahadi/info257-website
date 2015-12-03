@@ -1,9 +1,9 @@
 <?php 
-	echo "Hello!";
+/*	echo "Hello!";
 	include 'mysqlini.php';
 	$db = new mysqli($host, $user, $pw, $dbname);
 	echo "HELLO!!!!"
-	echo $user_query;
+	# echo $user_query;
 	echo "GOODBYE!!"
 	if($db->connect_errorno){
 		echo "<p>";
@@ -18,5 +18,5 @@
 			echo "<p>DIDN'T WORK";
 		}
 	}	
-
+*/
 ?>

@@ -10,11 +10,11 @@ $dbname = $settings['database']['dbname'];
 $user = $settings['database']['username']; 
 $pw = $settings['database']['password']; 
 
-
+/*
 $queryfile = "queries.ini";
 if (!$queries = parse_ini_file($queryfile, TRUE)) throw new
 exception('Unable to open ' . $file . '.');
 
 $user_qery = $queries['queries']['users']; 
-
+*/
 ?>
