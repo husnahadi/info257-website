@@ -2,15 +2,18 @@
 <body>
 
 <?php
-$cars = array("Volvo", "BMW", "Toyota");
-$ages = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
-$queries = array("Users"=>"Users Query", "Proj"=>"Projects Query", "Orgs"=>"Organizations Query");
-
+	include 'queriesini.php';
+	include 'mysqlini.php';
+	$queries = array("Users"=>$user_query, "Proj"=>$proj_query, "Orgs"=>$org_query);
 ?>
 
-Your selection is: <?php echo $_POST["top10option"]; 
-$query_result = $queries[$_POST["top10option"]];
+Your selection is: <?php echo $_POST["top10"]; 
+$query_result = $queries[$_POST["top10"]];
 ?>
+<p>
+Query to run is:
+<?php echo $query_result ?>
+<p>
 <?php
 	if($result = $db->query($query_result)){ 
 		echo $result->num_rows; 
