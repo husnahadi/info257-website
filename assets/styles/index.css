@@ -50,7 +50,7 @@ form{
 
 select, button, input, textarea, option{
 	font-family: 'Open Sans', sans-serif;
-	font-size: 5em;
+	font-size: 1.5em;
 }
 
 .query_title{
