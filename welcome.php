@@ -6,6 +6,7 @@
 	<div class = "title_bg">
 		<div class = "title_container">
 			<img class = "img_head" src="assets/img/logo.png">
+			<div class="hr"><hr></div>
 		</div>
 	</div>
 	<div class = "content">
