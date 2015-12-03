@@ -5,7 +5,8 @@
 <body>
 	<div class = "title_bg">
 		<div class = "title_container">
-			<img class = "img_head" src="assets/img/logo.png">
+			<a href="index.html"><img class = "img_head" src="assets/img/logo.png"></a>
+			<div class="hr"><hr></div>
 		</div>
 	</div>
 	<div class = "content">
