@@ -1,23 +1,61 @@
 <html>
 <head>
-	<link rel="stylesheet" href="styles/index.css" />
+	<link rel="stylesheet" href="assets/styles/index.css" />
 </head>
 
 <body>
+	<div class = "title_bg">
+		<div class = "title_container">
+			<img class = "img_head" src="assets/img/logo.png">
+			<h1 class="title">Open Source <br>Database Project<br></h1>
+			<div class = "desc">
+				An analytic insight into the top open source projects.
+				<p>
+				By Erik Krogen and Husna Hadi
+				<div class="hr"><hr></div>
+			</div>
+		</div>
+	</div>
+	<div class ="content">
+		<form class="form" action="welcome.php" method="post">
+		<div class ="query_title">
+			Top 10 Stats
+		</div>
+		<div class = "query_desc">
+			Select one of the options below to see stats for the top 10 items in the Open Source Database!
+		</div>
+		<p>
+		<select name="top10">
+			<option value="">Select...</option>
+			<option value="Users">Users</option>
+			<option value="Orgs">Organizations</option>
+			<option value="Proj">Projects</option>
+		</select>
+		<input type="submit">
+		</form>
 
-<h1 class="title">Open Source Databse Project</h1>
-
-<form action="welcome.php" method="post">
-Top 10 Stats
-<p>
-<select name="top10">
-	<option value="">Select...</option>
-	<option value="Users">Users</option>
-	<option value="Orgs">Organizations</option>
-	<option value="Proj">Projects</option>
-</select>
-<input type="submit">
-</form>
-
+		<p>
+		<div class ="query_title">
+			Language Patterns 
+		</div>
+		<div class = "query_desc">
+			Take a look at language trends throughout the years.
+		</div>		
+		<p>
+		<div class ="query_title">	
+			User Location Summary
+		</div>
+		<div class = "query_desc">
+			A summary look at the top locations users have been contributing to these projects from.
+		</div>			
+		<p>
+		<div class ="query_title">
+			Project Summary
+		</div>
+		<div class = "query_desc">
+			Overview of the projects throughout the years.
+		</div>	
+		 
+	</div>
 </body>
 </html>

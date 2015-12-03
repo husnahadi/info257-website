@@ -1,6 +1,6 @@
 <?php
 
-$inifile = "/home/husnahadi/mysql_settings.ini"; 
+$inifile = "/home/husnahadi/mysql_settings.ini"; #change to location of your password file
 if (!$settings = parse_ini_file($inifile, TRUE)) throw new 
 exception('Unable to open ' . $file . '.'); 
 

@@ -1,0 +1,64 @@
+@import url('http://fonts.googleapis.com/css?family=Open+Sans');
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	/*padding: 20px;*/
+}
+
+.hr{
+	padding-top:20px;
+}
+
+.title_bg{
+	/*background-color: red;*/
+}
+
+.title_container{
+	margin: 0 auto;
+	text-align:center;
+	width: 300px;	
+	padding: 20px;
+/*	float: left;
+	position: fixed;*/
+}
+.title{
+	/*text-align: center;*/
+	/*float: left;*/
+	/*padding-top: 20px;*/
+
+}
+
+.img_head{
+	
+	width:20%;
+}
+
+.content{
+	padding-top: 20px;
+	padding-bottom: 100px;
+	margin: 0 auto;
+	width: 500px;
+	/*position: relative;*/
+/*	padding-left: 350px;
+	padding-right:20px;*/
+}
+
+form{
+
+	font-family: 'Open Sans', sans-serif;
+}
+
+select, button, input, textarea, option{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 5em;
+}
+
+.query_title{
+	padding-top: 20px;
+	font-size: 1.2em;
+}
+
+.query_desc{
+	padding-top: 10px;
+	font-size: .8em;
+}
