@@ -15,7 +15,7 @@
 		   $queries = array("Users"=>$user_query, "Proj"=>$proj_query, "Orgs"=>$org_query);
 		   mysql_connect($host, $user, $pw);
 		   mysql_select_db($dbname);
-                   $result = mysql_query(str_replace("PROJECT_NAME", $_POST["search_string"], $proj_search_query));
+                   $result = mysql_query(str_replace("PROJECT_NAME", mysql_real_escape_string($_POST["search_string"]), $proj_search_query));
 		?>
 
                 <?php 
