@@ -14,24 +14,24 @@
 		   include 'queriesini.php';
 		   include 'mysqlini.php';
 		   $queries = array("Users"=>$user_query, "Proj"=>$proj_query, "Orgs"=>$org_query);
-		   mysql_connect($host, $user, $pw);
+		   $titles = array("Users"=>"Number of Projects", "Proj"=>"Bytes of Code", "Orgs"=>"Bytes of Code");
+			mysql_connect($host, $user, $pw);
 		   mysql_select_db($dbname);
 		?>
 
 		Your selection is: <?php echo $_POST["top10"]; ?>
 
-		<p>
-		Query to run is:
 		<?php 
 		   $query_result = $queries[$_POST["top10"]];
-		   echo $query_result 
 		?>
 		</p>
 
 		<p>
 		<?php
+			echo "<div class='query_title'>Name | "; 
+			echo $titles[$_POST["top10"]];
+			echo "</div>";
 		   $result = mysql_query($query_result);
-		   echo "Number of Rows returned: ".mysql_num_rows($result);
 		   while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
 		     echo "<br/>";
 		     foreach($row as $col) {
