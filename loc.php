@@ -61,21 +61,15 @@
 		   mysql_select_db($dbname);
 		?>
 
-		Top Locations:
+		<div class="query_title">Top Locations:</div>
 		<p>
 		<div id="Map" style="width: 500px; height: 329px;"></div>
-
-		<p>
-		Query to run is:
-		<?php 
-		   echo $loc_query 
-		?>
-		</p>
+		<div class="query_desc">Map of the top locations contributors have contributed from.</div>
 
 		<p>
 		<?php
-		   $result = mysql_query($loc_query);
-		   echo "Number of Rows returned: ".mysql_num_rows($result);
+			echo "<div class='query_title'>Location | Number of Contributors</div>";   
+		$result = mysql_query($loc_query);
 		   while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
 		     echo "<br/>";
 		     foreach($row as $col) {
