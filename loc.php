@@ -4,11 +4,10 @@
 	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
 <script type="text/javascript">
-<script type="text/javascript">
 
 
 	// var addresses = ['2499 Cedar Creek Street, Santa Rosa, CA', '4474 Poinsettia Court, San Jose, CA', 'Asia','North America','South America'];
-	var addresses = ['London, UK'];	
+	var addresses = ['London, UK', 'San Francisco, CA', 'Paris, France', 'Seattle, WA', 'Austin, TX', 'Berlin, Germany', 'Austin, TX', 'Germany', 'Russia', 'Tokyo, Japan', 'Australia'];	
 	var map;
 	var infowindow = [];
 
@@ -17,6 +16,7 @@
 	});
 
 	function initialize(){
+		console.log("HELLO!");
 	    var map;
 	    var myOptions = {
 	        zoom: 1,
@@ -29,6 +29,7 @@
 	}
 
 	function addMarkers(map){
+		console.log("Adding marker!");
 		for (var x = 0; x < addresses.length; x++) {
 	        $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address='+addresses[x]+'&sensor=false', null, function (data) {
 	            var p = data.results[0].geometry.location
@@ -47,7 +48,7 @@
 <body>
 	<div class = "title_bg">
 		<div class = "title_container">
-			<a href="index.html"><img class = "img_head" src="assets/img/logo.png"></a>
+			<img class = "img_head" src="assets/img/logo.png">
 		</div>
 	</div>
 	<div class = "content">
@@ -61,7 +62,7 @@
 
 		Top Locations:
 
-		<div id="Map" style="width: 300px;"></div>
+		<div id="Map" style="width: 500px; height: 329px;"></div>
 
 		<p>
 		Query to run is:
@@ -83,5 +84,6 @@
 		?>
 		</p>
 	</div>
+
 </body>
 </html>
