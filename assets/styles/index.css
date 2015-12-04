@@ -52,9 +52,9 @@ form{
 	font-family: 'Open Sans', sans-serif;
 }
 
-select, button, input, textarea, option{
+select, button, input, option{
 	font-family: 'Open Sans', sans-serif;
-	font-size: 1.5em;
+	font-size: 1em;
 }
 
 .query_title{
