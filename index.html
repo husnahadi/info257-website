@@ -51,6 +51,35 @@
 		<input type="submit">
 		</form>
 
+		<div class ="query_title">
+			Language Patterns 
+		</div>
+		<div class = "query_desc">
+		  <p>Take a look at language trends throughout the years!</p>
+                  <p>Enter a year to see the total number of bytes, by language, written in projects started that year:
+			<form class="form" action="lang_by_year.php" method="post">
+                                <input name="year" type="text">
+				<input type="submit">
+			</form>
+                  <p>Enter the name of a language to see the total number of bytes, by year, written in projects started that year:
+			<form class="form" action="lang.php" method="post">
+                                <input name="lang_name" type="text">
+				<input type="submit">
+			</form>
+
+		</div>		
+		<p>
+		<div class ="query_title">	
+			User Location Summary
+		</div>
+		<div class = "query_desc">
+			A summary look at the top locations users have been contributing to these projects from.
+			<p>
+			<form class="form" action="loc.php" method="post">
+				<input type="submit">
+			</form>
+		</div>		
+
                 <p>
                   <div class="query_title">Project Information</div>         
                   <div class="query_desc">
@@ -101,37 +130,6 @@
                       <input type="submit">
                     </form>
                     </div>
-
-		<p>
-		<div class ="query_title">
-			Language Patterns 
-		</div>
-		<div class = "query_desc">
-		  <p>Take a look at language trends throughout the years!</p>
-                  <p>Enter a year to see the total number of bytes, by language, written in projects started that year:
-			<form class="form" action="lang_by_year.php" method="post">
-                                <input name="year" type="text">
-				<input type="submit">
-			</form>
-                  <p>Enter the name of a language to see the total number of bytes, by year, written in projects started that year:
-			<form class="form" action="lang.php" method="post">
-                                <input name="lang_name" type="text">
-				<input type="submit">
-			</form>
-
-		</div>		
-		<p>
-		<div class ="query_title">	
-			User Location Summary
-		</div>
-		<div class = "query_desc">
-			A summary look at the top locations users have been contributing to these projects from.
-			<p>
-			<form class="form" action="loc.php" method="post">
-				<input type="submit">
-			</form>
-		</div>			
-		<p>		 
 	</div>
 </body>
 </html>
