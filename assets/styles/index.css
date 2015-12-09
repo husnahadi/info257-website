@@ -5,6 +5,34 @@ body {
 	/*padding: 20px;*/
 }
 
+#p{
+	float: left;
+}
+
+#c{
+	float: left;
+}
+
+#o{
+	float: left;
+}
+
+.unselected{
+	/*color: #CCC;*/
+}
+
+.hidden{
+	visibility: hidden;
+}
+
+.search{
+	height: 320px;
+}
+
+.search_elem{
+	position:absolute;
+}
+
 #Map{
 	padding-top: 20px;
 }
@@ -59,7 +87,12 @@ select, button, input, option{
 
 .query_title{
 	padding-top: 20px;
-	font-size: 1.2em;
+	font-size: 1.4em;
+}
+
+.query_subtitle{
+	padding-top: 20px;
+	font-size: 1em;
 }
 
 .query_desc{

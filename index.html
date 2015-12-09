@@ -1,6 +1,37 @@
 <html>
 <head>
 	<link rel="stylesheet" href="assets/styles/index.css" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function () {
+			initialize();
+		});
+
+		function initialize(){
+			console.log("HELLO");
+	
+			$('#p').on('click', function() {
+				$('.search_proj').removeClass('hidden');
+				$('.search_contr').addClass('hidden');
+				$('.search_org').addClass('hidden');     
+        	});
+
+        	$('#c').on('click', function() {
+				$('.search_contr').removeClass('hidden');
+				$('.search_proj').addClass('hidden');
+				$('.search_org').addClass('hidden');     
+        	});   
+
+        	$('#o').on('click', function() {
+				$('.search_org').removeClass('hidden');
+				$('.search_proj').addClass('hidden');
+				$('.search_contr').addClass('hidden');     
+        	}); 
+	   
+		}
+
+	</script>
 </head>
 
 <body>
@@ -81,54 +112,66 @@
 		</div>		
 
                 <p>
-                  <div class="query_title">Project Information</div>         
-                  <div class="query_desc">
-                  <p>
-                    Enter a string to search for within the names of projects:
-                    <form class="form" action="project_search.php" method="post">
-                      <input name="search_string" type="text">
-                      <input type="submit">
-                    </form>
-                  <p>
-                    Enter the name of a project to get more information about it (project name must match exactly; use search above to find specific names):
-                    <form class="form" action="project.php" method="post">
-                      <input name="project_name" type="text">
-                      <input type="submit">
-                    </form>
+                	<div class="search">
+                	<div class="query_title">Search:</div><p>
+                	<div class="query_desc">Click one of the categories below to toggle different searches.</div>
+
+                	<div id="p">Project | </div> <div id="c" class="unselected">Contributors |</div> <div id="o" class="unselected"> Organization</div>|
+                	<p>
+                	<div class="search_proj search_elem">
+	                  <div class="query_subtitle">Project Information</div>         
+	                  <div class="query_desc">
+	                  <p>
+	                    Enter a string to search for within the names of projects:
+	                    <form class="form" action="project_search.php" method="post">
+	                      <input name="search_string" type="text">
+	                      <input type="submit">
+	                    </form>
+	                  <p>
+	                    Enter the name of a project to get more information about it (project name must match exactly; use search above to find specific names):
+	                    <form class="form" action="project.php" method="post">
+	                      <input name="project_name" type="text">
+	                      <input type="submit">
+	                    </form>
+	                  </div>
                   </div>
 
                 <p>
-                  <div class="query_title">Contributor Information</div>         
-                  <div class="query_desc">
-                  <p>
-                    Enter a string to search for within the GitHub usernames of contributors:
-                    <form class="form" action="user_search.php" method="post">
-                      <input name="search_string" type="text">
-                      <input type="submit">
-                    </form>
-                  <p>
-                    Enter the username of a contributor to get more information about them (username must match exactly; use search above to find specific usernames):
-                    <form class="form" action="user.php" method="post">
-                      <input name="username" type="text">
-                      <input type="submit">
-                    </form>
-                  </div>
+                	<div class="search_contr search_elem hidden">
+	                  <div class="query_subtitle">Contributor Information</div>         
+	                  <div class="query_desc">
+	                  <p>
+	                    Enter a string to search for within the GitHub usernames of contributors:
+	                    <form class="form" action="user_search.php" method="post">
+	                      <input name="search_string" type="text">
+	                      <input type="submit">
+	                    </form>
+	                  <p>
+	                    Enter the username of a contributor to get more information about them (username must match exactly; use search above to find specific usernames):
+	                    <form class="form" action="user.php" method="post">
+	                      <input name="username" type="text">
+	                      <input type="submit">
+	                    </form>
+	                  </div>
+                  	</div>
 
                 <p>
-                  <div class="query_title">Organization Information</div>         
-                  <div class="query_desc">
-                  <p>
-                    Enter a string to search for within the GitHub names of contributing organizations:
-                    <form class="form" action="org_search.php" method="post">
-                      <input name="search_string" type="text">
-                      <input type="submit">
-                    </form>
-                  <p>
-                    Enter the name of an organization to get more information about it (name must match exactly; use search above to find specific names):
-                    <form class="form" action="org.php" method="post">
-                      <input name="org_name" type="text">
-                      <input type="submit">
-                    </form>
+                	<div class="search_org search_elem hidden">
+	                  <div class="query_subtitle">Organization Information</div>         
+	                  <div class="query_desc">
+	                  <p>
+	                    Enter a string to search for within the GitHub names of contributing organizations:
+	                    <form class="form" action="org_search.php" method="post">
+	                      <input name="search_string" type="text">
+	                      <input type="submit">
+	                    </form>
+	                  <p>
+	                    Enter the name of an organization to get more information about it (name must match exactly; use search above to find specific names):
+	                    <form class="form" action="org.php" method="post">
+	                      <input name="org_name" type="text">
+	                      <input type="submit">
+	                    </form>
+	                    </div>
                     </div>
 	</div>
 </body>
