@@ -13,33 +13,28 @@
 		<?php
 		   include 'queriesini.php';
 		   include 'mysqlini.php';
-		   $queries = array("Users"=>$user_query, "Projects"=>$proj_query, "Organizations"=>$org_query);
-		   $titles = array("Users"=>"Number of Projects", "Projects"=>"Bytes of Code", "Organizations"=>"Bytes of Code");
-			mysql_connect($host, $user, $pw);
+		   $queries = array("Users"=>$top_user_query, "Projects"=>$top_proj_query, "Organizations"=>$top_org_query);
+                   $titles = array("Users"=>"Number of Projects", "Projects"=>"Bytes of Code", "Organizations"=>"Bytes of Code");
+                   $descriptions = array("Users"=>"the highest number of projects contributed to", 
+					 "Projects"=>"the size of the project, in bytes of code", 
+					 "Organizations"=>"highest total number of bytes of code owned by that organization");
+                   $selection = $_POST["top10"];
+                   mysql_connect($host, $user, $pw);
 		   mysql_select_db($dbname);
+                   $result = mysql_query($queries[$selection]);
 		?>
-
-		Your selection is: <?php echo $_POST["top10"]; ?>
-
-		<?php 
-		   $query_result = $queries[$_POST["top10"]];
-		?>
-		</p>
 
 		<p>
+		Top 10 <?php echo $selection ?> as judged by <?php echo $descriptions[$selection] ?>
+		</p>
+		<table>
+		<tr><th>Name</th><th><?php echo $titles[$selection] ?></th></tr>
 		<?php
-			echo "<div class='query_title'>Name | "; 
-			echo $titles[$_POST["top10"]];
-			echo "</div>";
-		   $result = mysql_query($query_result);
 		   while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
-		     echo "<br/>";
-		     foreach($row as $col) {
-		       echo $col." | ";
-		     }
+		     echo "<tr><td>".$row[0]."</td><td>".$row[1]."</td></tr>";
 		   }
 		?>
-		</p>
+		</table>
 	</div>
 </body>
 </html>

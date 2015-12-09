@@ -17,12 +17,29 @@
 		</div>
 	</div>
 	<div class ="content">
+
+		<p>
+		  This website aims to maintain a collection of relevant open source software projects to best 
+		  understand the landscape of open source, and provide insight into, for example, how programming
+		  languages fluctuate in popularity over time. To acquire this information, we have scraped 
+		  <a href="http://www.github.com">GitHub</a>, a popular code repository for open source projects,
+		  for all projects which have more than 2000 forks (a way for potential contributors to make
+		  a copy of a code repository and make local changes which can then be submitted back to the
+		  main repository). We have collected a total of 247 projects in this way; nowhere near a
+		  comprehensive view of open source, but enough to provide insight into trends. 
+		</p>
+		<p>
+		  We have assembled below a collection of queries which can be run against this database;
+		  please enjoy!
+		</p>
+
 		<form class="form" action="welcome.php" method="post">
 		<div class ="query_title">
 			Top 10 Stats
 		</div>
 		<div class = "query_desc">
-			Select one of the options below to see stats for the top 10 items in the Open Source Database!
+			Select one of the options below to see stats for the top 10 items in that category in 
+			the Open Source Database!
 		</div>
 		<p>
 		<select name="top10">
@@ -38,23 +55,65 @@
                   <div class="query_title">Project Information</div>         
                   <p>
                     Enter a string to search for within the names of projects:
-                    <form class="form" action="search.php" method="post">
+                    <form class="form" action="project_search.php" method="post">
                       <input name="search_string" type="text">
                       <input type="submit">
                     </form>
                   <p>
-                    Enter the name of a project to get more information about (project name must match exactly; use search above to find specific names):
+                    Enter the name of a project to get more information about it (project name must match exactly; use search above to find specific names):
                     <form class="form" action="project.php" method="post">
                       <input name="project_name" type="text">
                       <input type="submit">
                     </form>
+
+                <p>
+                  <div class="query_title">Contributor Information</div>         
+                  <p>
+                    Enter a string to search for within the GitHub usernames of contributors:
+                    <form class="form" action="user_search.php" method="post">
+                      <input name="search_string" type="text">
+                      <input type="submit">
+                    </form>
+                  <p>
+                    Enter the username of a contributor to get more information about them (username must match exactly; use search above to find specific usernames):
+                    <form class="form" action="user.php" method="post">
+                      <input name="username" type="text">
+                      <input type="submit">
+                    </form>
+
+                <p>
+                  <div class="query_title">Organization Information</div>         
+                  <p>
+                    Enter a string to search for within the GitHub names of contributing organizations:
+                    <form class="form" action="org_search.php" method="post">
+                      <input name="search_string" type="text">
+                      <input type="submit">
+                    </form>
+                  <p>
+                    Enter the name of an organization to get more information about it (name must match exactly; use search above to find specific names):
+                    <form class="form" action="org.php" method="post">
+                      <input name="org_name" type="text">
+                      <input type="submit">
+                    </form>
+
 
 		<p>
 		<div class ="query_title">
 			Language Patterns 
 		</div>
 		<div class = "query_desc">
-			Take a look at language trends throughout the years.
+		  <p>Take a look at language trends throughout the years!</p>
+                  <p>Enter a year to see the total number of bytes, by language, written in projects started that year:
+			<form class="form" action="lang_by_year.php" method="post">
+                                <input name="year" type="text">
+				<input type="submit">
+			</form>
+                  <p>Enter the name of a language to see the total number of bytes, by year, written in projects started that year:
+			<form class="form" action="lang.php" method="post">
+                                <input name="lang_name" type="text">
+				<input type="submit">
+			</form>
+
 		</div>		
 		<p>
 		<div class ="query_title">	

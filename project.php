@@ -12,7 +12,6 @@
 		<?php
 		   include 'queriesini.php';
 		   include 'mysqlini.php';
-		   $queries = array("Users"=>$user_query, "Proj"=>$proj_query, "Orgs"=>$org_query);
 		   mysql_connect($host, $user, $pw);
 		   mysql_select_db($dbname);
 

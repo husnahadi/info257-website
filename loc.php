@@ -1,6 +1,7 @@
 <html>
 <head>
 	<link rel="stylesheet" href="assets/styles/index.css" />
+        <script src="Chart.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
 	<script type="text/javascript">
@@ -16,7 +17,6 @@
 	});
 
 	function initialize(){
-		console.log("HELLO!");
 	    var map;
 	    var myOptions = {
 	        zoom: 1,
@@ -66,18 +66,35 @@
 		<div id="Map" style="width: 500px; height: 329px;"></div>
 		<div class="query_desc">Map of the top locations contributors have contributed from.</div>
 
-		<p>
-		<?php
-			echo "<div class='query_title'>Location | Number of Contributors</div>";   
-		$result = mysql_query($loc_query);
-		   while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
-		     echo "<br/>";
-		     foreach($row as $col) {
-		       echo $col." | ";
-		     }
-		   }
-		?>
-		</p>
+                  <canvas id="myChart" width="400" height="400"></canvas>
+		    <?php
+		       $result = mysql_query($loc_query);
+                       $contrib_amounts = array();
+                       $contrib_locs = array();
+		       while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
+                         array_push($contrib_locs, '"'.$row[0].'"');
+                         array_push($contrib_amounts, $row[1]);
+		       }
+		    ?>               
+
+                <script>
+                  // Get the context of the canvas element we want to select
+                  var ctx = document.getElementById("myChart").getContext("2d");
+                  var data = {
+                    labels: [<?php echo implode(",", $contrib_locs); ?>],
+                    datasets: [
+                     {
+                      label: "Language",
+                      fillColor: "rgba(220,220,220,0.5)",
+                      strokeColor: "rgba(220,220,220,0.8)",
+                      highlightFill: "rgba(220,220,220,0.75)",
+                      highlightStroke: "rgba(220,220,220,1)",
+                      data: [<?php echo implode(",", $contrib_amounts); ?>]
+                     }
+                    ]
+                  };
+                  var myNewChart = new Chart(ctx).Bar(data);
+                </script>
 	</div>
 
 </body>
